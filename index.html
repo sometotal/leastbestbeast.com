@@ -22,6 +22,7 @@ body {
   padding: 20px;
   margin: 60px auto;
   background-color: #DDD;
+  text-align: center;
 }
 </style>
 </head>
@@ -36,11 +37,32 @@ body {
 </script>
 
 <div class="infobox">
-  <p>Below are tracks we are currently mixing
-  <iframe width="100%" height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/2594568&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
-  <p>To hear more, go to <a href="http://soundcloud.com/joesepi/sets/lost-and-found">Joe Sepi's Soundcloud page</a></p>
+  <p><a href="#" id="player-toggle">Wanna hear something?</a></p>
+  <div id="player" style="display:none">
+    <iframe width="100%" height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/2594568&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
+    <p>To hear more, go to <a href="http://soundcloud.com/joesepi/sets/lost-and-found">Joe Sepi's Soundcloud page</a></p>
+</div>
+
   </p>
 </div>
+
+<script>
+var playerToggle = document.getElementById('player-toggle');
+var playerState = 'hidden';
+var playerContainer = document.getElementById('player');
+playerToggle.onclick = function() {
+  if (playerState === 'hidden') {
+    playerState = 'show';
+    playerContainer.style.display = 'block';
+    playerToggle.innerHTML = 'Well, alright!';
+  }
+  else {
+    playerState = 'hidden';
+    playerContainer.style.display = 'none';
+    playerToggle.innerHTML = 'Wanna hear something?';
+  }
+};
+</script>
 
 </body>
 </html>
