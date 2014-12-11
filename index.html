@@ -6,40 +6,8 @@
 
   <title>Least Best Beast</title>
 <link href="/assets/icons/foundation-icons.css" media="screen" rel="stylesheet"/>
-<style>
-body {
-  font-size: 12px;
-  font-family: monospace;
-  margin:0;
-  padding:0;
-}
-.container > div { height:100%; min-height: 600px; }
-.content { width:420px; background-color: #000; color: #ddd; padding: 10px;}
-.branding { position:fixed; top: 0; left: 440px; width:570px; text-indent: -9999px; background: #fff url(/assets/images/rabbit.jpg) no-repeat 40px 40px; }
+<link href="/assets/css/style.css" media="screen" rel="stylesheet"/>
 
-/* Sticky Headers */
-h1 {
-  margin: 0;
-  width: 430px;
-  padding: 15px 0;
-  background-color: #000;
-  position: relative;
-  z-index: 1;
-}
-h1.fixed {
-  position: fixed;
-  top: 0;
-  z-index: 0;
-}
-h1.fixed.absolute {
-  position: absolute;
-}
-
-/* ICONS */
-.icons { background-color: #000; position: fixed; top: 0; left: 300px; width: 140px; z-index: 2; }
-.icons a { float: right; margin: 12px 10px 5px 5px; color: #ddd; }
-.icons a i { font-size: 25px; }
-</style>
 </head>
 <body>
 <script>
@@ -52,6 +20,7 @@ h1.fixed.absolute {
 </script>
 
 <div class="container">
+  <div class="branding">Least Best Beast</div>
   <div class="content">
     <div class="icons">
       <a href="http://www.github.com/stdv8/leastbestbeast.com"><i class="fi-social-github"></i></a>
@@ -70,7 +39,6 @@ h1.fixed.absolute {
     </section>
     <section class="music">
       <h1>Music</h1>
-
       <iframe width="100%" height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/2594568&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
       <p>To hear more, go to <a href="http://soundcloud.com/joesepi/sets/lost-and-found">Joe Sepi's Soundcloud page</a></p>
 
@@ -88,8 +56,29 @@ h1.fixed.absolute {
       <p>First get some decent content up and publish it.</p>
       <p>Request that Mike and/or Patrick (and I) replace the graphic very soon</p>
       <p>Make responsive</p>
+    </section>
+    <section>
+      <h1>Tasks and Notes to Myself about the Site</h1>
+      <p>If you are reading this, I hope you are Mike or Patrick. If you are not, come back tomorrow. What you see here now is a work in progress. Thanks.</p>
+      <p>First get some decent content up and publish it.</p>
+      <p>Request that Mike and/or Patrick (and I) replace the graphic very soon</p>
+      <p>Make responsive</p>
+    </section>
+    <section>
+      <h1>Tasks and Notes to Myself about the Site</h1>
+      <p>If you are reading this, I hope you are Mike or Patrick. If you are not, come back tomorrow. What you see here now is a work in progress. Thanks.</p>
+      <p>First get some decent content up and publish it.</p>
+      <p>Request that Mike and/or Patrick (and I) replace the graphic very soon</p>
+      <p>Make responsive</p>
+    </section>
+    <section>
+      <h1>Tasks and Notes to Myself about the Site</h1>
+      <p>If you are reading this, I hope you are Mike or Patrick. If you are not, come back tomorrow. What you see here now is a work in progress. Thanks.</p>
+      <p>First get some decent content up and publish it.</p>
+      <p>Request that Mike and/or Patrick (and I) replace the graphic very soon</p>
+      <p>Make responsive</p>
+    </section>
   </div>
-  <div class="branding">Least Best Beast</div>
 </div>
 
 
@@ -106,94 +95,10 @@ h1.fixed.absolute {
 
 
 
-<div style="display:none;" class="infobox">
-  <p><a href="#" id="player-toggle">Wanna hear something?</a></p>
-  <div id="player" style="display:none">
-    <iframe width="100%" height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/2594568&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
-    <p>To hear more, go to <a href="http://soundcloud.com/joesepi/sets/lost-and-found">Joe Sepi's Soundcloud page</a></p>
-</div>
-
-</div>
-
-<script src="/assets/js/jquery.min.js"></script>
-<script>
-var playerToggle = document.getElementById('player-toggle');
-var playerState = 'hidden';
-var playerContainer = document.getElementById('player');
-playerToggle.onclick = function() {
-  if (playerState === 'hidden') {
-    playerState = 'show';
-    playerContainer.style.display = 'block';
-    playerToggle.innerHTML = 'Well, alright!';
-  }
-  else {
-    playerState = 'hidden';
-    playerContainer.style.display = 'none';
-    playerToggle.innerHTML = 'Wanna hear something?';
-  }
-};
 
 
-
-function stickyTitles(stickies) {
-
-  this.load = function() {
-
-    stickies.each(function(){
-
-        var thisSticky = jQuery(this).wrap('<div class="followWrap" />');
-        thisSticky.parent().height(thisSticky.outerHeight());
-
-        jQuery.data(thisSticky[0], 'pos', thisSticky.offset().top);
-
-        });
-  }
-
-  this.scroll = function() {
-
-    stickies.each(function(i){
-
-
-        var thisSticky = jQuery(this),
-        nextSticky = stickies.eq(i+1),
-        prevSticky = stickies.eq(i-1),
-        pos = jQuery.data(thisSticky[0], 'pos');
-
-        if (pos <= jQuery(window).scrollTop()) {
-
-        thisSticky.addClass("fixed");
-
-        if (nextSticky.length > 0 && thisSticky.offset().top >= jQuery.data(nextSticky[0], 'pos') - thisSticky.outerHeight()) {
-
-        thisSticky.addClass("absolute").css("top", jQuery.data(nextSticky[0], 'pos') - thisSticky.outerHeight());
-
-        }
-
-        } else {
-
-        thisSticky.removeClass("fixed");
-
-        if (prevSticky.length > 0 && jQuery(window).scrollTop() <= jQuery.data(thisSticky[0], 'pos')  - prevSticky.outerHeight()) {
-
-          prevSticky.removeClass("absolute").removeAttr("style");
-
-        }
-        }
-    });
-  }
-}
-
-
-var newStickies = new stickyTitles(jQuery("h1"));
-
-newStickies.load();
-
-jQuery(window).on("scroll", function() {
-
-    newStickies.scroll();
-
-});
-</script>
+<!-- <script src="/assets/js/jquery.min.js"></script> -->
+<!-- <script src="/assets/js/js.js"></script> -->
 
 </body>
 </html>

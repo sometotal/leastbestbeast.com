@@ -1,0 +1,53 @@
+body {
+  font-size: 13px;
+  font-family: monospace;
+  margin:0;
+  padding:0;
+  background-color: #000;
+  color: #ddd;
+}
+a { color: #fff; text-decoration: underline; }
+a:hover { text-decoration: none; background-color: #444; }
+
+.branding {
+  background: #fff url(/assets/images/rabbit.jpg) no-repeat center;
+  height: 100vh;
+  text-indent: -9999px;
+}
+
+
+
+/* ICONS */
+.icons { position: fixed; top: 0; right: 0; width: 140px; z-index: 2; }
+.icons a { float: right; margin: 12px 10px 5px 5px; color: #ddd; }
+.icons a i { font-size: 25px; }
+
+
+.content { padding: 10px; }
+.content section { width:420px; margin: 0 auto; }
+
+
+/*
+.container > div { position:relative; height:100%; min-height: 600px; }
+.content { width:420px; background-color: #000; color: #ddd; padding: 10px;}
+.branding { position:fixed; top: 0; left: 440px; width:570px; text-indent: -9999px; background: #fff url(/assets/images/rabbit.jpg) no-repeat 40px 40px; }
+*/
+
+/* Sticky Headers */
+h1 {
+  margin: 0 0 0 -2px;
+  width: 420px;
+  padding: 15px 0 15px 2px;
+  background-color: #000;
+  position: relative;
+  z-index: 1;
+}
+h1.fixed {
+  position: fixed;
+  top: 0;
+  z-index: 0;
+}
+h1.fixed.absolute {
+  position: absolute;
+}
+
