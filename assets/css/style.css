@@ -19,7 +19,7 @@ a:hover { text-decoration: none; background-color: #444; }
 
 /* ICONS */
 .icons { position: fixed; top: 0; right: 0; width: 140px; z-index: 2; }
-.icons a { float: right; margin: 12px 10px 5px 5px; color: #ddd; }
+.icons a { float: right; padding: 5px; margin: 12px 10px 5px 0; color: #ddd; }
 .icons a i { font-size: 25px; }
 
 
