@@ -21,14 +21,14 @@
 </script>
 
 <div class="container">
-  <div class="branding">Least Best Beast</div>
+  <div id="branding" class="branding">Least Best Beast</div>
   <div class="content">
     <div class="icons">
       <a href="http://www.github.com/stdv8/leastbestbeast.com"><i class="fi-social-github"></i></a>
       <a href="http://www.facebook.com/leastbestbeast"><i class="fi-social-facebook"></i></a>
       <a href="http://www.twitter.com/leastbestbeast"><i class="fi-social-twitter"></i></a>
     </div>
-    <section data-context="about">
+    <section data-context="shows" id="shows">
       <h1>Shows</h1>
       <p>We have an upcoming show:</p>
       <ul>
@@ -68,8 +68,14 @@
 
   </div>
 </div>
-
-<script src="/node_modules/">
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="/assets/js/jquery.min.js"><\/script>')</script>
+<script>
+$("#branding").click(function() {
+    $('html, body').animate({
+        scrollTop: $("#shows").offset().top
+    }, 2000);
+});
+</script>
 </body>
 </html>
