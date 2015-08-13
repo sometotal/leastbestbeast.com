@@ -46,6 +46,7 @@ window.shows = [{
     link: 'https://www.facebook.com/events/369534283230560/'
   }]
 
+
 }, {
   date: 1429992000,
   venue: 'Division Street Guitars',
@@ -67,4 +68,26 @@ window.shows = [{
     link: 'https://www.facebook.com/events/819644104750621/'
   }]
 
+}, {
+  date: 1442176200,
+  venue: 'Peekskill Brewery',
+  venue_site: 'http://peekskillbrewery.com',
+  city: 'Peekskill',
+  state: 'NY',
+  bands: [{
+    band: 'Jukebox Romantics',
+    site: ''
+  }],
+  cover: 0,
+  age: 0,
+  poster: '',
+  links: [{
+    name: 'Facebook Event',
+    link: ''
+  }]
+
 }];
+
+
+
+
