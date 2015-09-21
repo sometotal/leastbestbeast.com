@@ -10,7 +10,7 @@ a { color: #fff; text-decoration: underline; }
 a:hover { text-decoration: none; background-color: #444; }
 
 .branding {
-  background: #fff url(/assets/images/girlbunny-sticker-320.jpg) no-repeat center;
+  background: #fff url(/assets/images/jukebox-hug-320.jpg) no-repeat center;
   height: 100vh;
   text-indent: -9999px;
 }
