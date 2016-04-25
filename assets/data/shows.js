@@ -87,14 +87,3 @@ window.shows = [{
   }]
 
 }];
-
-
-
-        // <li>Saturday, December 19, 2015 8:00PM</li>
-        // <li><a href="http://divisionstreetguitars.com" target="_blank">Division Street Guitars</a> in <a href="http://peekskill.rocks" target="_blank">Peekskill, NY</a></li>
-        // <li>w/ <a href="https://www.facebook.com/TheApologeticsNY/" target="_blank">Apologetics</a>, <a href="https://www.facebook.com/JD-Gambrell-1474645529509794/" target="_blank">JD Gambrell</a>, <a href="https://www.facebook.com/allmyfriendsmusic/" target="_blank">All My Friends</a> & <a href="https://www.facebook.com/Whiskey-Neat-230950130433605/" target="_blank">Whiskey Neat</a></li>
-        // <li>$5</li>
-        // <li><a href="https://www.facebook.com/events/877677052327977/" target="_blank">Facebook Event, for those that do that.</a></li>
-        // <li><a href="http://joesepi.com/2015/12/17/lbb-show/" target="_blank">More info</a></li>
-      // </ul>
-
