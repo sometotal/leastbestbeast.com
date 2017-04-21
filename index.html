@@ -32,12 +32,12 @@
 
     <section data-context="shows" id="shows">
       <h1>Shows</h1>
-      <!-- <p>More shows coming soon!</p> -->
-      <ul>
-        <li>Friday, February 10, 2017 9:00PM</li>
-        <li>Bacchus Club in New Paltz, NY</li>
-        <li>w/ <a href="http://diascreams.tumblr.com/">Dia</a></li>
-      </ul>
+      <p>More shows coming soon!</p>
+      <!-- <ul> -->
+      <!--   <li>Friday, February 10, 2017 9:00PM</li> -->
+      <!--   <li>Bacchus Club in New Paltz, NY</li> -->
+      <!--   <li>w/ <a href="http://diascreams.tumblr.com/">Dia</a></li> -->
+      <!-- </ul> -->
     </section>
 
     <section data-context="newsletter">
@@ -69,14 +69,12 @@
       <h3>Rough Mix!</h3>
       <p>New record coming soon. Here's a litle taste. That's Matt Labozza posed with us. :)</p>
       <iframe width="100%" height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/304847854&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
-      <!-- <h3>Decent Rehearsal</h3> -->
-      <!-- <iframe width="100%" height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/users/222254469&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe> -->
-      <!-- <1!-- Bandcamp --1> -->
-      <!-- <1!-- <iframe width="100%" style="border: 0; height: 439px;" src="https://bandcamp.com/EmbeddedPlayer/album=269280824/size=large/bgcol=ffffff/linkcol=333333/artwork=small/transparent=true/" seamless><a href="http://leastbestbeast.bandcamp.com/album/decent-rehearsal">Decent Rehearsal by Least Best Beast</a></iframe> --1> -->
+    </section>
 
-      <!-- <h3>Recordings</h3> -->
-      <!-- <iframe width="100%" height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/2594568&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe> -->
-      <!-- <p>To hear more, go to <a href="http://soundcloud.com/joesepi/sets/lost-and-found">Joe Sepi's Soundcloud page</a></p> -->
+    <section data-context="video">
+      <h1>Video</h1>
+      <p>A video of a recent show where the bass makes the camera appear underwater.</p>
+      <iframe width="400" height="225" src="https://www.youtube.com/embed/QTJA0iAZ8fM" frameborder="0" allowfullscreen></iframe>
     </section>
 
     <section data-context="about">
@@ -109,6 +107,18 @@ $("#branding").click(function() {
         scrollTop: $("#shows").offset().top
     }, 2000);
 });
+
+/* console.log('get em');
+
+$.ajax({
+  type: 'GET',
+  url: 'https://band-aid.mybluemix.net/api/albums',
+  crossDomain: true
+}).done(function(data) {
+  console.log(data);
+});
+*/
+
 </script>
 </body>
 </html>
