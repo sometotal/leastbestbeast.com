@@ -35,7 +35,9 @@
 
   <link href="/assets/icons/foundation-icons.css" media="screen" rel="stylesheet"/>
   <link href="/assets/css/style.css" media="screen" rel="stylesheet"/>
-
+  <style>
+    section>h1 { border-bottom: 1px solid #fff; margin: 60px 0 15px; }
+  </style>
 </head>
 <body>
 <script>
@@ -58,9 +60,9 @@
     </div>
 
     <section data-context="shows" id="shows">
-      <h1>Shows</h1>
-      <div id="dynamic-shows-container">
-        <p>More shows coming soon!</p>
+      <h1>Events</h1>
+      <div id="dynamic-events-container">
+        <p>More events coming soon!</p>
         <!-- <ul> -->
         <!--   <li>Friday, February 10, 2017 9:00PM</li> -->
         <!--   <li>Bacchus Club in New Paltz, NY</li> -->
@@ -132,17 +134,22 @@
 <script>window.jQuery || document.write('<script src="/assets/js/jquery.min.js"><\/script>')</script>
 <script src="/assets/js/handlebars-v4.0.10.js"></script>
 
+  <style>
+    #dynamic-events-container ul { margin-bottom: 50px; }
+  </style>
 <script id="entry-template" type="text/x-handlebars-template">
-{{#each shows}}
+{{#each events}}
   <ul>
-    <li>{{date}}</li>
-    <li>{{location}}</li>
-    <li>{{city}}, {{state}}</li>
-    <li>lineup:
+    <li><strong>{{date}}</strong></li>
+    <li>{{locName}}</li>
+    <li>{{locCity}}, {{locState}}</li>
+    <li><u>Bands</u>:
       <ul>
-      {{#each lineup}}
+        {{#each bands}}
         <li>{{.}}</li>
-      {{/each}}
+        {{/each}}
+      </ul>
+    </li>
   </ul>
 {{/each}}
 </script>
@@ -157,24 +164,34 @@ $("#branding").click(function() {
 var source = $("#entry-template").html();
 var showTemplate = Handlebars.compile(source);
 
-function buildShowHTML(showArray) {
-  showArray.forEach(function(show, i) {
-    showArray[i].date = new Date(show.date);
+function buildEventsHTML(eventsRes) {
+  let events = [];
+  const now = new Date();
+  const nowUTC = now.getTime();
+
+  eventsRes.forEach(function(event, i) {
+    let date = new Date(event.timeStart);
+    const dateUTC = date.getTime();
+
+    if (nowUTC < dateUTC) {
+      event.date = date;
+      events.push(event);
+    }
+
   });
-  $('#dynamic-shows-container').html(showTemplate({shows: showArray}));
+  $('#dynamic-events-container').html(showTemplate({ events }));
 }
 
-/*
 $.ajax({
   type: 'GET',
-  url: 'https://band-app.mybluemix.net/api/events',
+  url: 'https://band-aid.mybluemix.net/api/events',
   crossDomain: true
-}).done(function(showArray) {
-  if (showArray && showArray.length) {
-    buildShowHTML(showArray);
+}).done(function(events) {
+  if (events && events.length) {
+    buildEventsHTML(events);
   }
 });
-*/
+
 
 </script>
 </body>
