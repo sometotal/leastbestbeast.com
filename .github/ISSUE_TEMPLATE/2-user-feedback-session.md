@@ -1,5 +1,5 @@
 ---
-name: "\U0001F64B User-Feedback Session"
+name: "\U0001F3E2 User-Feedback Session"
 about: Want to run a user-feedback session on a specific topic at your meetup or event? Great! Use this issue template to gather all necessary details to get the ball rolling.
 ---
 
