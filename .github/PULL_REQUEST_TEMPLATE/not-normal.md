@@ -1,5 +1,5 @@
 ---
-title: not normal
+name: not normal
 ---
 
 whatcha gonna do.
